@@ -2,21 +2,18 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
     <line>
-      <![CDATA[PASS: Home Page is Displayed]]>
+      <![CDATA[Pass:Err Msg is Displayed]]>
     </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="9296" started-at="2017-12-26T06:00:20Z" finished-at="2017-12-26T06:00:29Z">
+  <suite name="Default suite" duration-ms="6078" started-at="2017-12-26T06:21:33Z" finished-at="2017-12-26T06:21:39Z">
     <groups>
-      <group name="smoke">
-        <method signature="ValidLogin.testValidLogin()[pri:1, instance:script.ValidLogin@7f9a81e8]" name="testValidLogin" class="script.ValidLogin"/>
-      </group> <!-- smoke -->
       <group name="login">
-        <method signature="ValidLogin.testValidLogin()[pri:1, instance:script.ValidLogin@7f9a81e8]" name="testValidLogin" class="script.ValidLogin"/>
+        <method signature="InvalidLogin.testInvalidLogin()[pri:2, instance:script.InvalidLogin@7f9a81e8]" name="testInvalidLogin" class="script.InvalidLogin"/>
       </group> <!-- login -->
     </groups>
-    <test name="Default test" duration-ms="9296" started-at="2017-12-26T06:00:20Z" finished-at="2017-12-26T06:00:29Z">
-      <class name="script.ValidLogin">
-        <test-method status="PASS" signature="openApp(java.lang.String)[pri:0, instance:script.ValidLogin@7f9a81e8]" name="openApp" is-config="true" duration-ms="5947" started-at="2017-12-25T22:00:20Z" finished-at="2017-12-25T22:00:26Z">
+    <test name="Default test" duration-ms="6078" started-at="2017-12-26T06:21:33Z" finished-at="2017-12-26T06:21:39Z">
+      <class name="script.InvalidLogin">
+        <test-method status="PASS" signature="openApp(java.lang.String)[pri:0, instance:script.InvalidLogin@7f9a81e8]" name="openApp" is-config="true" duration-ms="3899" started-at="2017-12-25T22:21:33Z" finished-at="2017-12-25T22:21:37Z">
           <params>
             <param index="0">
               <value>
@@ -27,25 +24,25 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openApp -->
-        <test-method status="PASS" signature="testValidLogin()[pri:1, instance:script.ValidLogin@7f9a81e8]" name="testValidLogin" duration-ms="2638" started-at="2017-12-25T22:00:26Z" finished-at="2017-12-25T22:00:28Z">
+        <test-method status="PASS" signature="testInvalidLogin()[pri:2, instance:script.InvalidLogin@7f9a81e8]" name="testInvalidLogin" duration-ms="1469" started-at="2017-12-25T22:21:37Z" finished-at="2017-12-25T22:21:38Z">
           <reporter-output>
             <line>
-              <![CDATA[PASS: Home Page is Displayed]]>
+              <![CDATA[Pass:Err Msg is Displayed]]>
             </line>
           </reporter-output>
-        </test-method> <!-- testValidLogin -->
-        <test-method status="PASS" signature="closeApp(org.testng.ITestResult)[pri:0, instance:script.ValidLogin@7f9a81e8]" name="closeApp" is-config="true" duration-ms="685" started-at="2017-12-25T22:00:28Z" finished-at="2017-12-25T22:00:29Z">
+        </test-method> <!-- testInvalidLogin -->
+        <test-method status="PASS" signature="closeApp(org.testng.ITestResult)[pri:0, instance:script.InvalidLogin@7f9a81e8]" name="closeApp" is-config="true" duration-ms="690" started-at="2017-12-25T22:21:38Z" finished-at="2017-12-25T22:21:39Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testValidLogin status=SUCCESS method=ValidLogin.testValidLogin()[pri:1, instance:script.ValidLogin@7f9a81e8] output=PASS: Home Page is Displayed]]]>
+                <![CDATA[[TestResult name=testInvalidLogin status=SUCCESS method=InvalidLogin.testInvalidLogin()[pri:2, instance:script.InvalidLogin@7f9a81e8] output=Pass:Err Msg is Displayed]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApp -->
-      </class> <!-- script.ValidLogin -->
+      </class> <!-- script.InvalidLogin -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
