@@ -7,7 +7,6 @@ import generic.XL;
 import page.LoginPage;
 
 public class InvalidLogin extends BaseTest{
-
 	@Test(priority=2,groups= {"login"})
 	public void testInvalidLogin() {
 		String un=XL.getCellValue(XL_PATH,"InvalidLogin",1,0);

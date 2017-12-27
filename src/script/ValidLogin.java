@@ -1,6 +1,5 @@
 package script;
 
-import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
 
 import generic.BaseTest;
