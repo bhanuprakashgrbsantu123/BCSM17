@@ -32,5 +32,5 @@ public void testProductVersion() {
 	e.clickCloseButton();
 	//Click on logout
 	e.clickLogout();
-}
+   }
 }

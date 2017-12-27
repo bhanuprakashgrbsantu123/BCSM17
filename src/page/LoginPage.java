@@ -40,6 +40,7 @@ public class LoginPage {
 	}
 	
 	public void verifyErrMsgIsDisplayed(WebDriver driver) {
+	try {Thread.sleep(1000);}catch(Exception e1){}
 		WebDriverWait wait=new WebDriverWait(driver,10);
 		try {
 			wait.until(ExpectedConditions.visibilityOf(errMsg));

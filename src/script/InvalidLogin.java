@@ -7,10 +7,12 @@ import generic.XL;
 import page.LoginPage;
 
 public class InvalidLogin extends BaseTest{
-	@Test(priority=2,groups= {"login"})
+	@Test(priority=2,groups={"login"})
 	public void testInvalidLogin() {
-		String un=XL.getCellValue(XL_PATH,"InvalidLogin",1,0);
-		String pw=XL.getCellValue(XL_PATH,"InvalidLogin",1,1);
+		int rc=XL.getRowCount(XL_PATH, "InvalidLogin");
+		for(int i=1;i<=rc;i++) {
+		String un=XL.getCellValue(XL_PATH,"InvalidLogin",i,0);
+		String pw=XL.getCellValue(XL_PATH,"InvalidLogin",i,1);
 		//Enter invalid User Name
 		LoginPage l=new LoginPage(driver);
 		l.setUserName(un);
@@ -20,5 +22,6 @@ public class InvalidLogin extends BaseTest{
 		l.clickLogin();
 		//verify Err Msg Is Displayed
 		l.verifyErrMsgIsDisplayed(driver);
+		}
 	}
 }
