@@ -1,12 +1,8 @@
 package generic;
 
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
@@ -24,8 +20,11 @@ public class BaseTest implements IAutoConst{
  }
  @Parameters({"browser","ip"})
  @BeforeMethod(alwaysRun=true)
- public void openApp(@Optional("chrome")String browser,@Optional("localhost")String ip) throws MalformedURLException {
-	 URL ra=new URL("http://"+ip+":4444/wd/hub");
+ public void openApp(@Optional("chrome")String browser,@Optional("localhost")String ip) {
+	 URL ra=null;
+	 try {
+		 	ra=new URL("http://"+ip+":4444/wd/hub");
+	 }catch(Exception e) {}
 	 DesiredCapabilities dc;
 	if(browser.equals("chrome")) {
 		dc=DesiredCapabilities.chrome();
