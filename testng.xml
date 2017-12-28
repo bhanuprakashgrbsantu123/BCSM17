@@ -1,11 +1,14 @@
-<suite name="Suite">
+<suite name="Suite" parallel="tests">
   <test name="Win7GC">
-  <groups>
-  <run>
-  	<include name="login"/>
-  </run>
-  </groups>
   <parameter name="browser" value="chrome"/>
+    <parameter name="ip" value="192.168.1.102"/>
+  	<packages>
+  		<package name="script"/>
+  	</packages>
+  </test> 
+    <test name="Win7FF">
+  <parameter name="browser" value="firefox"/>
+    <parameter name="ip" value="192.168.1.102"/>
   	<packages>
   		<package name="script"/>
   	</packages>

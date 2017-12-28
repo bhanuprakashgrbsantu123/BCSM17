@@ -1,10 +1,14 @@
 package generic;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 import org.testng.annotations.AfterMethod;
@@ -18,15 +22,18 @@ public class BaseTest implements IAutoConst{
 	System.setProperty(CHROME_KEY,CHROME_VALUE);
 	System.setProperty(GECKO_KEY, GECK_VALUE);
  }
- @Parameters({"browser"})
+ @Parameters({"browser","ip"})
  @BeforeMethod(alwaysRun=true)
- public void openApp(@Optional("chrome")String browser) {
+ public void openApp(@Optional("chrome")String browser,@Optional("localhost")String ip) throws MalformedURLException {
+	 URL ra=new URL("http://"+ip+":4444/wd/hub");
+	 DesiredCapabilities dc;
 	if(browser.equals("chrome")) {
-		driver=new ChromeDriver();
+		dc=DesiredCapabilities.chrome();
 	}
 	else {
-		driver=new FirefoxDriver();
+		dc=DesiredCapabilities.firefox();
 	}
+	driver=new RemoteWebDriver(ra,dc);
 	String url=AL.getProperty(SETTINGS_PATH,"URL");
 	driver.get(url);
 	String strITO=AL.getProperty(SETTINGS_PATH,"ITO");
@@ -41,7 +48,7 @@ public class BaseTest implements IAutoConst{
 		 String imgPath=AL.getPhoto(driver,PHOTO_PATH,name);
 		 Reporter.log("ImagePath:"+imgPath,true);
 	 }
-	driver.quit();
+	driver.close();
  }
 }
 
